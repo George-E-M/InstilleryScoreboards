@@ -122,9 +122,8 @@ namespace Scoreboards
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "defaultApi",
-                    template: "api/{controller}/{id}",
-                    defaults: new { id = RouteParameter.Optional });
+                    name: "api",
+                    template: "api/{controller}/{id}");
 
                 routes.MapRoute(
                     name: "default",
