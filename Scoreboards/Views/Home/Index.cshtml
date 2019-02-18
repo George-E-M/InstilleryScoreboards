@@ -81,11 +81,13 @@
                     {
                         @foreach (var user in Model.UsersData)
                         {
+                            if (Int32.Parse(user.Wins) > 0 || Int32.Parse(user.Loses) > 0 || Int32.Parse(user.Draws) > 0)
+                            {
                             <tr onclick="location.href = '@(Url.Action("Profile", "Users", new { userId = user.UserId }))'">
                                 <td>
                                     <div class="home-leader-table-cell">
                                         <label class="leader-table-rank-number">@i</label>
-                                        @if(Convert.ToInt32(user.Points) > 0 && i < 4)
+                                        @if (Convert.ToInt32(user.Points) > 0 && i < 4)
                                         {
                                             @switch (i)
                                             {
@@ -169,7 +171,8 @@
                                     </div>
                                 </td>
                             </tr>
-                            i++;
+                                i++;
+                            }
                         }
                     }
                     else
